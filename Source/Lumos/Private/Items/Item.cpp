@@ -2,6 +2,8 @@
 
 
 #include "Items/Item.h"
+#include "Lumos/DebugMacros.h"
+
 
 // Sets default values
 AItem::AItem()
@@ -15,6 +17,16 @@ AItem::AItem()
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UWorld* World = GetWorld();
+	FVector Location = GetActorLocation();
+	FVector Forward = GetActorForwardVector();
+	
+	DRAW_SPHERE(Location);
+	//DRAW_LINE(Location, Location + Forward * 100.f);
+	//DRAW_POINT(Location + Forward * 100.f);
+	DRAW_VECTOR(Location, Location + Forward * 100.f);
+	
 	
 }
 
