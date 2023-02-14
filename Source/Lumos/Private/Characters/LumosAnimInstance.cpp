@@ -25,5 +25,6 @@ void ULumosAnimInstance::NativeUpdateAnimation(float DeltaTime)
 	{
 		GroundSpeed = UKismetMathLibrary::VSizeXY(LumosCharacterMovement->Velocity);
 		IsFalling = LumosCharacterMovement->IsFalling();
+		CharacterState = LumosCharacter->GetCharacterState();
 	}
 }
